@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
 const port = 3400;
-const student =[
+const student = [
     {
         id:1,
         name:"Felix",
@@ -71,6 +71,10 @@ app.get("/", (reg,res)=>{
 app.get('/about',(req, res)=> {
     res.sendFile(__dirname + '/index.html');
     console.log(__dirname);
+})
+
+app.get("/api",(reg,res)=>{
+    res.json(student)
 })
 
 app.listen(port, () => {
